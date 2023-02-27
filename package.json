@@ -1,0 +1,38 @@
+{
+  "name": "ngo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "check": "npx prettier --check .",
+    "format": "npx prettier --write ."
+  },
+  "dependencies": {
+    "core-js": "^3.25.3",
+    "node": "^16.13.1",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.2.1",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "sass-loader": "^10.4.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 10 version"
+    ]
+  }
+}
