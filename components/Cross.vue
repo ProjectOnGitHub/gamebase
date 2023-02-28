@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <span class="cross"><span class="cross__line"></span></span>
 </template>
 
 <script>

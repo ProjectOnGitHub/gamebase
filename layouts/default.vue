@@ -1,5 +1,5 @@
 <template>
-  <Nuxt />
+  <Header />
 </template>
 
 <style></style>
