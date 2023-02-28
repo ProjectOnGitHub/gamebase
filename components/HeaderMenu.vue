@@ -27,4 +27,45 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header__menu {
+  @include flexible(100%);
+  @include unmarkedList;
+  z-index: 10;
+  font-size: 16px;
+  gap: 15px;
+  @media screen and (max-width: $tablet-small) {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    z-index: 10;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    font-size: 18px;
+    background-color: $color-bg;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    &_opened {
+      right: 0;
+      z-index: 15;
+      visibility: visible;
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+  &-item {
+    white-space: nowrap;
+  }
+  &-link {
+    @include defaultLink;
+    color: $color-link-main;
+  }
+}
+</style>
