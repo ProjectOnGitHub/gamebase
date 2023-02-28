@@ -1,5 +1,7 @@
 <template>
-  <Header />
+  <App>
+    <Header />
+  </App>
 </template>
 
 <style></style>
