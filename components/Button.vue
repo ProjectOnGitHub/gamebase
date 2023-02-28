@@ -30,4 +30,21 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header__button {
+  display: none;
+  justify-items: right;
+  @media screen and (max-width: $tablet-small) {
+    @include flexible(32px);
+    @include button();
+    position: relative;
+    z-index: 20;
+    height: 32px;
+    padding: 0;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    border-radius: 0;
+  }
+}
+</style>
