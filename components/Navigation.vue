@@ -26,8 +26,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.header__button {
-  color: red;
-}
-</style>
+<style lang="scss" scoped></style>
