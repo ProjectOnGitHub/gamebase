@@ -1,27 +1,40 @@
 <template>
   <nav class="header__navigation">
-    <Button
+    <HeaderButton
       className="header__button"
+      buttonName="header-button"
       buttonType="button"
-      buttonName="header-button">
-      <Cross />
-    </Button>
-    <Overlay />
-    <HeaderMenu />
+      @click="handleToggleMenu">
+      <Cross :class="{cross_active: active}" />
+    </HeaderButton>
+    <Overlay :class="{overlay_opened: active}" />
+    <HeaderMenu :class="{header__menu_opened: active}" />
   </nav>
 </template>
 
 <script>
-import Button from './Button.vue';
+import HeaderButton from './Button.vue';
 import HeaderMenu from './HeaderMenu.vue';
 import Overlay from './Overlay.vue';
 import Cross from './Cross.vue';
 export default {
   components: {
-    Button,
+    HeaderButton,
     HeaderMenu,
     Overlay,
     Cross,
+  },
+  props: {
+    active: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    handleToggleMenu() {
+      this.active = !this.active;
+      console.log(this.active);
+    },
   },
 };
 </script>

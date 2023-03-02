@@ -21,7 +21,7 @@ export default {};
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
-    &_active {
+    &_opened {
       left: 0;
       visibility: visible;
       cursor: pointer;
