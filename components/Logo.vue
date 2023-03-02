@@ -2,7 +2,9 @@
   <nuxt-link
     class="logo"
     to="/">
-    {{ logo }}
+    <svg-icon
+      name="logo-icon"
+      class="logo__icon" />
   </nuxt-link>
 </template>
 
@@ -17,4 +19,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo__icon {
+  stroke: $color-link-main;
+  fill: $color-bg;
+  width: 40px;
+  height: 40px;
+}
+</style>
