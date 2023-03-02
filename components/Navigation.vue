@@ -28,11 +28,13 @@ export default {
     Overlay,
     Cross,
   },
-  props: {
-    active: {
-      type: Boolean,
-      default: false,
-    },
+  data() {
+    return {
+      active: {
+        type: Boolean,
+        default: false,
+      },
+    };
   },
   methods: {
     handleToggleMenu() {
