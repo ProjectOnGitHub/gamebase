@@ -3,7 +3,8 @@
     <li
       class="header__menu-item"
       v-for="item of items"
-      :key="item.text">
+      :key="item.text"
+      @click="$emit('click')">
       <nuxt-link
         class="header__menu-link"
         active-class="header__menu-link_active"
@@ -50,13 +51,11 @@ export default {
     font-size: 18px;
     background-color: $color-bg;
     visibility: hidden;
-    opacity: 0;
     transition: 0.5s;
     &_opened {
       right: 0;
       z-index: 15;
       visibility: visible;
-      opacity: 1;
       transition: 0.5s;
     }
   }

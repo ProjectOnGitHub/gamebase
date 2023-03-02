@@ -1,5 +1,7 @@
 <template>
-  <div class="overlay"></div>
+  <div
+    class="overlay"
+    @click="$emit('click')"></div>
 </template>
 
 <script>
@@ -25,7 +27,7 @@ export default {};
       left: 0;
       visibility: visible;
       cursor: pointer;
-      opacity: 0.6;
+      opacity: 0.4;
       transition: 0.5s;
     }
   }

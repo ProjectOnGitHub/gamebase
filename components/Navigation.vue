@@ -7,8 +7,12 @@
       @click="handleToggleMenu">
       <Cross :class="{cross_active: active}" />
     </HeaderButton>
-    <Overlay :class="{overlay_opened: active}" />
-    <HeaderMenu :class="{header__menu_opened: active}" />
+    <Overlay
+      :class="{overlay_opened: active}"
+      @click="handleToggleMenu" />
+    <HeaderMenu
+      :class="{header__menu_opened: active}"
+      @click="handleToggleMenu" />
   </nav>
 </template>
 
