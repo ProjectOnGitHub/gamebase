@@ -54,7 +54,9 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/svg-sprite'],
+  svgSprite: {},
+
   /*
    ** Nuxt.js modules
    */
