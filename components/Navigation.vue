@@ -30,10 +30,7 @@ export default {
   },
   data() {
     return {
-      active: {
-        type: Boolean,
-        default: false,
-      },
+      active: false,
     };
   },
   methods: {
