@@ -20,10 +20,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.logo__icon {
-  stroke: $color-link-main;
-  fill: $color-bg;
-  width: 40px;
-  height: 40px;
+.logo {
+  @include flexible(100%);
+  align-items: center;
+  &:hover .logo__icon {
+    stroke: $color-text-main;
+  }
+  &__icon {
+    stroke: $color-link-main;
+    fill: $color-bg;
+    width: 40px;
+    height: 40px;
+  }
 }
 </style>

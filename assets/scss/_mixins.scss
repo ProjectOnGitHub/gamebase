@@ -28,6 +28,9 @@
 @mixin defaultLink {
   cursor: pointer;
   text-decoration: none;
-  transition: ease-in-out;
+  transition: 0.2s ease;
   position: relative;
+  &:hover {
+    color: $color-text-main;
+  }
 }
