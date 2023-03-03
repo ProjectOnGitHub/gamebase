@@ -1,5 +1,6 @@
 <template>
   <button
+    class="button"
     :class="className"
     :name="buttonName"
     :type="buttonType"
@@ -32,12 +33,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.button {
+  @include button();
+}
+
 .header__button {
   display: none;
   justify-items: right;
   @media screen and (max-width: $tablet-small) {
     @include flexible(32px);
-    @include button();
     position: relative;
     z-index: 20;
     height: 32px;
@@ -49,9 +53,7 @@ export default {
   }
 }
 .search__button {
-  @include flexible(32px);
-  @include button();
-  width: 40px;
+  @include flexible(40px);
   height: 40px;
   border-radius: 0 50px 50px 0;
   background-color: transparent;

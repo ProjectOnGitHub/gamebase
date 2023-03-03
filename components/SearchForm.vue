@@ -8,23 +8,23 @@
         name="search"
         type="search"
         placeholder="Games..." />
-      <SearchButton
+      <Button
         className="search__button"
         buttonType="button"
         buttonName="search-button">
         <svg-icon
           name="search-icon"
           class="search__icon" />
-      </SearchButton>
+      </Button>
     </label>
   </form>
 </template>
 
 <script>
-import SearchButton from './Button.vue';
+import Button from './Button.vue';
 export default {
   components: {
-    SearchButton,
+    Button,
   },
 };
 </script>

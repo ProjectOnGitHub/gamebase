@@ -1,12 +1,12 @@
 <template>
   <nav class="header__navigation">
-    <HeaderButton
+    <Button
       className="header__button"
       buttonName="header-button"
       buttonType="button"
       @click="handleToggleMenu">
       <Cross :class="{cross_active: active}" />
-    </HeaderButton>
+    </Button>
     <Overlay
       :class="{overlay_opened: active}"
       @click="handleToggleMenu" />
@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import HeaderButton from './Button.vue';
+import Button from './Button.vue';
 import HeaderMenu from './HeaderMenu.vue';
 import Overlay from './Overlay.vue';
 import Cross from './Cross.vue';
 export default {
   components: {
-    HeaderButton,
+    Button,
     HeaderMenu,
     Overlay,
     Cross,
