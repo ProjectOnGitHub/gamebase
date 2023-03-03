@@ -49,7 +49,7 @@ export default {
     max-width: 320px;
     height: 100vh;
     font-size: 18px;
-    background-color: $color-bg;
+    background-color: $color-bg-element;
     visibility: hidden;
     transition: 0.5s;
     &_opened {

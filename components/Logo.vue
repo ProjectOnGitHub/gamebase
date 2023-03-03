@@ -28,7 +28,7 @@ export default {
   }
   &__icon {
     stroke: $color-link-main;
-    fill: $color-bg;
+    fill: $color-bg-element;
     width: 40px;
     height: 40px;
   }

@@ -19,7 +19,7 @@ export default {};
     display: block;
     width: 100%;
     height: 100vh;
-    background: $color-bg;
+    background: $color-bg-element;
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;

@@ -17,7 +17,7 @@ export default {};
   align-content: space-between;
   box-sizing: border-box;
   height: 100%;
-  background-color: $color-text-main;
+  background-color: $color-bg-main;
   font-weight: 400;
   line-height: 1.21;
   font-style: normal;
