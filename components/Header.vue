@@ -29,6 +29,7 @@ export default {
   @include gridable(100%);
   justify-items: center;
   box-sizing: border-box;
+  background-color: $color-bg;
   &__container {
     @include gridable(100%);
     grid-template-columns: repeat(2, min-content);
