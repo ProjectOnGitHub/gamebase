@@ -8,14 +8,7 @@
 </template>
 
 <script>
-import Logo from './Logo.vue';
-import Navigation from './Navigation.vue';
-
 export default {
-  components: {
-    Logo,
-    Navigation,
-  },
   data() {
     return {
       logoText: 'Лого',

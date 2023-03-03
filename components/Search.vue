@@ -7,14 +7,7 @@
 </template>
 
 <script>
-import SearchForm from './SearchForm.vue';
-import CardsList from './CardsList.vue';
-export default {
-  components: {
-    SearchForm,
-    CardsList,
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

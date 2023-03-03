@@ -7,12 +7,7 @@
 </template>
 
 <script>
-import Card from './Card.vue';
-export default {
-  components: {
-    Card,
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

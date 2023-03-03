@@ -17,17 +17,7 @@
 </template>
 
 <script>
-import Button from './Button.vue';
-import HeaderMenu from './HeaderMenu.vue';
-import Overlay from './Overlay.vue';
-import Cross from './Cross.vue';
 export default {
-  components: {
-    Button,
-    HeaderMenu,
-    Overlay,
-    Cross,
-  },
   data() {
     return {
       active: false,

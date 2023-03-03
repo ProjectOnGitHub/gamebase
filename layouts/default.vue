@@ -2,6 +2,7 @@
   <App>
     <Header />
     <Nuxt />
+    <Footer />
   </App>
 </template>
 
