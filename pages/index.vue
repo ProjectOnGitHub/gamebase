@@ -1,5 +1,7 @@
 <template>
-  <Header />
+  <Main>
+    <Search />
+  </Main>
 </template>
 
 <script>
