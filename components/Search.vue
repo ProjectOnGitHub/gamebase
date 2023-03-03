@@ -19,5 +19,6 @@ export default {
   box-sizing: border-box;
   max-width: $max-width;
   padding: 10px 20px;
+  justify-items: center;
 }
 </style>
