@@ -48,4 +48,12 @@ export default {
     border-radius: 0;
   }
 }
+.search__button {
+  @include flexible(32px);
+  @include button();
+  width: 40px;
+  height: 40px;
+  border-radius: 0 50px 50px 0;
+  background-color: transparent;
+}
 </style>
