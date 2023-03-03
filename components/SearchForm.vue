@@ -34,7 +34,7 @@ export default {
   &__form {
     @include flexible(100%);
 
-    max-width: 300px;
+    max-width: 500px;
     border-radius: 50%;
     height: 40px;
     &-label {
