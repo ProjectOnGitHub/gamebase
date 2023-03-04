@@ -2,11 +2,18 @@
   <li class="card">
     <img
       class="card__image"
-      src="https://cdn1.epicgames.com/spt-assets/e7585b80abf94d7590e4442d8d9cd3fc/lumencraft-1lg44.jpg"
-      alt="" />
+      :src="image"
+      :alt="name" />
     <div class="card__info">
-      <h3 class="card__title">God of War</h3>
-      <span class="card__subtitle">Shooter</span>
+      <h3 class="card__title">{{ name }}</h3>
+      <ul class="card__genre-list">
+        <li
+          class="card__genre-item"
+          v-for="(genre, i) in genres"
+          :key="i">
+          {{ genre }}
+        </li>
+      </ul>
       <ul class="card__status">
         <li class="card__status-name">
           <Button
@@ -34,12 +41,32 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    name: {
+      type: String,
+      default: '',
+    },
+    url: {
+      type: String,
+      default: '',
+    },
+    genres: {
+      type: Array,
+      default: '',
+    },
+    image: {
+      type: String,
+      default: '',
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .card {
   @include gridable(100%);
+  grid-template-rows: max-content 1fr;
   gap: 15px;
   border-radius: 5px;
   overflow: hidden;
@@ -57,13 +84,25 @@ export default {};
     height: auto;
     object-fit: cover;
   }
+  &__info {
+    @include gridable(100%);
+    gap: 10px;
+  }
+  &__genre-list {
+    @include gridable(100%);
+    @include unmarkedList;
+    align-items: center;
+
+    font-size: 12px;
+    flex-flow: wrap;
+  }
   &__status {
     @include flexible(100%);
     @include unmarkedList;
+    align-self: flex-end;
     font-size: 10px;
     flex-flow: nowrap;
-    gap: 5px;
-    padding: 15px 0 5px;
+    gap: 10px;
     box-sizing: border-box;
   }
   &__button {
