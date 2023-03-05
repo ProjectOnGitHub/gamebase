@@ -1,46 +1,41 @@
 <template>
   <ul class="cards">
+    <Button @click="getAllGames">Кнопка</Button>
     <Card
       v-for="game in games"
       :key="game.id"
-      :name="game.name"
-      :image="game.image"
-      :genres="game.genres"
+      :name="game.title"
+      :image="game.thumbnail"
+      :genre="game.genre"
       :url="game.url" />
   </ul>
 </template>
 
 <script>
+const API_KEY = process.env.API_KEY;
+const API_HOST = process.env.API_HOST;
+const options = {
+  headers: {
+    'X-RapidAPI-Key': `${API_KEY}`,
+    'X-RapidAPI-Host': `${API_HOST}`,
+  },
+};
 export default {
   data() {
     return {
-      games: [
-        {
-          id: 1,
-          name: 'The Last of Us',
-          image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1r7f.png',
-          genres: ['Adventure', 'Shooter'],
-        },
-        {
-          id: 2,
-          name: 'The Witcher 3: Wild Hunt',
-          image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.png',
-          genres: ['Adventure', 'Role-playing (RPG)'],
-        },
-        {
-          id: 3,
-          name: 'Cyberpunk 2077',
-          image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4hk8.png',
-          genres: ['Adventure', 'Role-playing (RPG)', 'Shooter'],
-        },
-        {
-          id: 4,
-          name: 'Atomic Heart',
-          image: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5qdi.png',
-          genres: ['Adventure', 'Role-playing (RPG)', 'Shooter'],
-        },
-      ],
+      games: [],
     };
+  },
+  methods: {
+    getAllGames() {
+      fetch(`https://${API_HOST}/api/games`, {
+        method: 'GET',
+        options,
+      })
+        .then((res) => res.json())
+        .then((res) => (this.games = res))
+        .catch((err) => console.error(err));
+    },
   },
 };
 </script>

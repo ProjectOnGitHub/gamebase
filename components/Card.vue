@@ -7,10 +7,7 @@
     <div class="card__info">
       <h3 class="card__title">{{ name }}</h3>
       <ul class="card__genre-list">
-        <li
-          class="card__genre-item"
-          v-for="(genre, i) in genres"
-          :key="i">
+        <li class="card__genre-item">
           {{ genre }}
         </li>
       </ul>
@@ -51,8 +48,8 @@ export default {
       type: String,
       default: '',
     },
-    genres: {
-      type: Array,
+    genre: {
+      type: String,
       default: '',
     },
     image: {

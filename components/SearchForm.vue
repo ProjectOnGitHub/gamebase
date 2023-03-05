@@ -11,8 +11,7 @@
       <Button
         className="search__button"
         buttonType="button"
-        buttonName="search-button"
-        @click="getAllGames">
+        buttonName="search-button">
         <svg-icon
           name="search-icon"
           class="search__icon" />
@@ -21,31 +20,7 @@
   </form>
 </template>
 
-<script>
-const API_KEY = process.env.API_KEY;
-const API_HOST = process.env.API_HOST;
-const options = {
-  headers: {
-    'X-RapidAPI-Key': `${API_KEY}`,
-    'X-RapidAPI-Host': `${API_HOST}`,
-  },
-};
-export default {
-  mounted() {},
-
-  methods: {
-    getAllGames() {
-      fetch(`https://${API_HOST}/api/games`, {
-        method: 'GET',
-        options,
-      })
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .catch((err) => console.error(err));
-    },
-  },
-};
-</script>
+<script></script>
 
 <style lang="scss" scoped>
 .search {
