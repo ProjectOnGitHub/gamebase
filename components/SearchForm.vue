@@ -1,7 +1,5 @@
 <template>
   <form class="search__form">
-    {{ token }}
-
     <label class="search__form-label">
       <input
         class="search__form-input"
@@ -33,11 +31,6 @@ const options = {
   },
 };
 export default {
-  data() {
-    return {
-      token: '',
-    };
-  },
   mounted() {},
 
   methods: {

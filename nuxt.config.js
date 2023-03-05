@@ -58,6 +58,7 @@ export default {
   svgSprite: {},
   env: {
     API_HOST: 'free-to-play-games-database.p.rapidapi.com',
+    API_KEY: process.env.API_KEY,
   },
   /*
    ** Nuxt.js modules
