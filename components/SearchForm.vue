@@ -14,7 +14,7 @@
         className="search__button"
         buttonType="button"
         buttonName="search-button"
-        @click="requestToken">
+        @click="getAllGames">
         <svg-icon
           name="search-icon"
           class="search__icon" />
@@ -24,10 +24,14 @@
 </template>
 
 <script>
-const AUTH_URL = process.env.AUTH_URL;
-const API_URL = process.env.API_URL;
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const API_KEY = process.env.API_KEY;
+const API_HOST = process.env.API_HOST;
+const options = {
+  headers: {
+    'X-RapidAPI-Key': `${API_KEY}`,
+    'X-RapidAPI-Host': `${API_HOST}`,
+  },
+};
 export default {
   data() {
     return {
@@ -37,25 +41,14 @@ export default {
   mounted() {},
 
   methods: {
-    requestToken() {
-      fetch(
-        `${AUTH_URL}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials`,
-        {
-          method: 'POST',
-        },
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          const expireTo = data.expires_in * 60 + Date.now();
-          if (localStorage.getItem('expireTo') < Date.now()) {
-            localStorage.setItem('expireTo', JSON.stringify(expireTo));
-            localStorage.setItem('token', JSON.stringify(data.access_token));
-          }
-          this.token = localStorage.getItem('token');
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    getAllGames() {
+      fetch(`https://${API_HOST}/api/games`, {
+        method: 'GET',
+        options,
+      })
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+        .catch((err) => console.error(err));
     },
   },
 };

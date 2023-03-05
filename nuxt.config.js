@@ -57,10 +57,7 @@ export default {
   buildModules: ['@nuxtjs/svg-sprite'],
   svgSprite: {},
   env: {
-    AUTH_URL: 'https://id.twitch.tv/oauth2/token',
-    API_URL: 'https://api.igdb.com/v4',
-    CLIENT_ID: process.env.CLIENT_ID,
-    CLIENT_SECRET: process.env.CLIENT_SECRET,
+    API_HOST: 'free-to-play-games-database.p.rapidapi.com',
   },
   /*
    ** Nuxt.js modules
