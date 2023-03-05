@@ -13,7 +13,8 @@
       <Button
         className="search__button"
         buttonType="button"
-        buttonName="search-button">
+        buttonName="search-button"
+        @click="requestToken">
         <svg-icon
           name="search-icon"
           class="search__icon" />
@@ -33,26 +34,30 @@ export default {
       token: '',
     };
   },
-  mounted() {
-    fetch(
-      `${AUTH_URL}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials`,
-      {
-        method: 'POST',
-      },
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        const expireTo = data.expires_in * 60 + Date.now();
-        if (localStorage.getItem('expireTo') < Date.now()) {
-          localStorage.setItem('expireTo', JSON.stringify(expireTo));
-          localStorage.setItem('token', JSON.stringify(data.access_token));
-        }
-        this.token = localStorage.getItem('token');
-      })
-      .catch((err) => console.log(err.status, err.message));
-  },
+  mounted() {},
 
-  methods: {},
+  methods: {
+    requestToken() {
+      fetch(
+        `${AUTH_URL}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials`,
+        {
+          method: 'POST',
+        },
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const expireTo = data.expires_in * 60 + Date.now();
+          if (localStorage.getItem('expireTo') < Date.now()) {
+            localStorage.setItem('expireTo', JSON.stringify(expireTo));
+            localStorage.setItem('token', JSON.stringify(data.access_token));
+          }
+          this.token = localStorage.getItem('token');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
 };
 </script>
 
