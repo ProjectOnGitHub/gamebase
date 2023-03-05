@@ -1,5 +1,7 @@
 <template>
   <form class="search__form">
+    {{ token }}
+
     <label class="search__form-label">
       <input
         class="search__form-input"
@@ -21,7 +23,37 @@
 </template>
 
 <script>
-export default {};
+const AUTH_URL = process.env.AUTH_URL;
+const API_URL = process.env.API_URL;
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+export default {
+  data() {
+    return {
+      token: '',
+    };
+  },
+  mounted() {
+    fetch(
+      `${AUTH_URL}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials`,
+      {
+        method: 'POST',
+      },
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const expireTo = data.expires_in * 60 + Date.now();
+        if (localStorage.getItem('expireTo') < Date.now()) {
+          localStorage.setItem('expireTo', JSON.stringify(expireTo));
+          localStorage.setItem('token', JSON.stringify(data.access_token));
+        }
+        this.token = localStorage.getItem('token');
+      })
+      .catch((err) => console.log(err.status, err.message));
+  },
+
+  methods: {},
+};
 </script>
 
 <style lang="scss" scoped>
