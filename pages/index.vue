@@ -5,13 +5,18 @@
       title="Games">
       <CardsList>
         <Card
-          v-for="game in games"
+          v-for="game in listingCardsPerPage"
           :key="game.id"
           :name="game.title"
           :image="game.thumbnail"
           :genre="game.genre"
           :url="game.url" />
       </CardsList>
+      <Button
+        className="more__button"
+        @click="addMoreCards(8)"
+        >More games</Button
+      >
     </Section>
   </Main>
 </template>
@@ -25,6 +30,7 @@ export default {
       games: [],
       API_KEY: process.env.API_KEY,
       API_HOST: process.env.API_HOST,
+      page: 8,
     };
   },
   asyncData() {
@@ -41,6 +47,16 @@ export default {
         return {games};
       })
       .catch((err) => console.error(err.message));
+  },
+  methods: {
+    addMoreCards(number) {
+      this.page += number;
+    },
+  },
+  computed: {
+    listingCardsPerPage() {
+      return this.games.slice(0, `${this.page}`);
+    },
   },
 };
 </script>
