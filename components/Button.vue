@@ -52,7 +52,7 @@ export default {
     border-radius: 0;
   }
 }
-.search__button {
+.search-form__button {
   @include flexible(40px);
   height: 40px;
   border-radius: 0 50px 50px 0;
