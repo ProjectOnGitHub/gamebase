@@ -1,6 +1,8 @@
 <template>
   <Main>
-    <Games>
+    <Section
+      className="game"
+      title="Games">
       <CardsList>
         <Card
           v-for="game in games"
@@ -10,7 +12,7 @@
           :genre="game.genre"
           :url="game.url" />
       </CardsList>
-    </Games>
+    </Section>
   </Main>
 </template>
 

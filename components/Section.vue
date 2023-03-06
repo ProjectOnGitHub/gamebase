@@ -1,15 +1,33 @@
 <template>
-  <section class="games">
+  <section
+    class="section"
+    :class="className">
+    <h2
+      class="section__title"
+      :class="`${className}__title`">
+      {{ title }}
+    </h2>
     <slot></slot>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    className: {
+      type: String,
+      default: '',
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.games {
+.section {
   @include gridable(100%);
   gap: 20px;
   box-sizing: border-box;
