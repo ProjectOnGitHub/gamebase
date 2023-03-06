@@ -20,18 +20,22 @@
             Пройти
           </Button>
         </li>
-        <Button
-          className="card__button-status card__button-status_active"
-          buttonType="button"
-          buttonName="card-button-status">
-          Прохожу
-        </Button>
-        <Button
-          className="card__button-status"
-          buttonType="button"
-          buttonName="card-button-status">
-          Прошёл
-        </Button>
+        <li class="card__status-name">
+          <Button
+            className="card__button-status card__button-status_active"
+            buttonType="button"
+            buttonName="card-button-status">
+            Прохожу
+          </Button>
+        </li>
+        <li class="card__status-name">
+          <Button
+            className="card__button-status"
+            buttonType="button"
+            buttonName="card-button-status">
+            Прошёл
+          </Button>
+        </li>
       </ul>
     </div>
   </li>
@@ -101,18 +105,6 @@ export default {
     flex-flow: nowrap;
     gap: 10px;
     box-sizing: border-box;
-  }
-  &__button {
-    &-status {
-      background-color: $color-bg-element;
-      color: $color-link-main;
-      border-radius: 3px;
-      padding: 4px;
-      &_active {
-        background-color: $color-link-main;
-        color: $color-bg-main;
-      }
-    }
   }
 }
 </style>
