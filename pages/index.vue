@@ -2,7 +2,6 @@
   <Main>
     <Games>
       <CardsList>
-        <Button @click="getAllGames">Кнопка</Button>
         <Card
           v-for="game in games"
           :key="game.id"
@@ -18,28 +17,25 @@
 <script>
 const API_KEY = process.env.API_KEY;
 const API_HOST = process.env.API_HOST;
-const options = {
-  headers: {
-    'X-RapidAPI-Key': `${API_KEY}`,
-    'X-RapidAPI-Host': `${API_HOST}`,
-  },
-};
 export default {
   data() {
     return {
       games: [],
+      API_KEY: process.env.API_KEY,
+      API_HOST: process.env.API_HOST,
     };
   },
-  methods: {
-    getAllGames() {
-      fetch(`https://${API_HOST}/api/games`, {
-        method: 'GET',
-        options,
-      })
-        .then((res) => res.json())
-        .then((res) => (this.games = res))
-        .catch((err) => console.error(err.message));
-    },
+  mounted() {
+    fetch(`https://${API_HOST}/api/games`, {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': `${API_KEY}`,
+        'X-RapidAPI-Host': `${API_HOST}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => (this.games = res))
+      .catch((err) => console.error(err.message));
   },
 };
 </script>
