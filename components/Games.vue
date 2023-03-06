@@ -1,8 +1,6 @@
 <template>
-  <section class="search">
-    <SearchForm />
-    <h2 class="search__title">Результаты поиска</h2>
-    <CardsList />
+  <section class="games">
+    <slot></slot>
   </section>
 </template>
 
@@ -11,7 +9,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.search {
+.games {
   @include gridable(100%);
   gap: 20px;
   box-sizing: border-box;
