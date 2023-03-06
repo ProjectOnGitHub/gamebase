@@ -58,4 +58,17 @@ export default {
   border-radius: 0 50px 50px 0;
   background-color: transparent;
 }
+
+.card__button {
+  &-status {
+    background-color: $color-bg-element;
+    color: $color-link-main;
+    border-radius: 3px;
+    padding: 4px;
+    &_active {
+      background-color: $color-link-main;
+      color: $color-bg-main;
+    }
+  }
+}
 </style>
