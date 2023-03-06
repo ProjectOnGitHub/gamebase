@@ -1,20 +1,20 @@
 <template>
-  <form class="search__form">
-    <label class="search__form-label">
+  <form class="search-form">
+    <label class="search-form__label">
       <input
-        class="search__form-input"
+        class="search-form__input"
         min-ength="1"
         required
         name="search"
         type="search"
         placeholder="Games..." />
       <Button
-        className="search__button"
+        className="search-form__button"
         buttonType="button"
         buttonName="search-button">
         <svg-icon
           name="search-icon"
-          class="search__icon" />
+          class="search-form__icon" />
       </Button>
     </label>
   </form>
@@ -23,33 +23,30 @@
 <script></script>
 
 <style lang="scss" scoped>
-.search {
-  &__form {
+.search-form {
+  @include flexible(100%);
+  max-width: 500px;
+  border-radius: 50%;
+  height: 40px;
+  &__label {
     @include flexible(100%);
-
-    max-width: 500px;
-    border-radius: 50%;
-    height: 40px;
-    &-label {
-      @include flexible(100%);
-      align-items: center;
-      height: 100%;
-      border-radius: 50px;
-      border: none;
-      flex-flow: nowrap;
-      padding-left: 15px;
-      background-color: $color-bg-element;
-    }
-    &-input {
-      @include flexible(100%);
-      border: none;
-      height: 24px;
-      outline: none;
-      background-color: $color-bg-element;
-      color: $color-text-main;
-      &::placeholder {
-        color: $color-link-main;
-      }
+    align-items: center;
+    height: 100%;
+    border-radius: 50px;
+    border: none;
+    flex-flow: nowrap;
+    padding-left: 15px;
+    background-color: $color-bg-element;
+  }
+  &__input {
+    @include flexible(100%);
+    border: none;
+    height: 24px;
+    outline: none;
+    background-color: $color-bg-element;
+    color: $color-text-main;
+    &::placeholder {
+      color: $color-link-main;
     }
   }
   &__icon {
