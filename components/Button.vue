@@ -65,10 +65,27 @@ export default {
     color: $color-link-main;
     border-radius: 3px;
     padding: 4px;
+    &:hover {
+      color: $color-bg-main;
+      background-color: $color-link-main;
+    }
     &_active {
       background-color: $color-link-main;
       color: $color-bg-main;
     }
+  }
+}
+
+.more__button {
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: $color-bg-main;
+  color: $color-link-main;
+  border: 1px solid $color-link-main;
+  &:hover {
+    background-color: $color-bg-element;
   }
 }
 </style>
