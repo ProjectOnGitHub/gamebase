@@ -27,8 +27,8 @@ export default {
       API_HOST: process.env.API_HOST,
     };
   },
-  mounted() {
-    fetch(`https://${API_HOST}/api/games`, {
+  asyncData() {
+    return fetch(`https://${API_HOST}/api/games`, {
       method: 'GET',
       headers: {
         'X-RapidAPI-Key': `${API_KEY}`,
@@ -36,7 +36,10 @@ export default {
       },
     })
       .then((res) => res.json())
-      .then((res) => (this.games = res))
+      .then((res) => {
+        const games = res;
+        return {games};
+      })
       .catch((err) => console.error(err.message));
   },
 };
