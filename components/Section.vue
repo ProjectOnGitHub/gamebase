@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 .section {
   @include gridable(100%);
-  gap: 20px;
+  gap: 35px;
   box-sizing: border-box;
   max-width: $max-width;
   padding: 35px 20px;
