@@ -14,7 +14,7 @@
       </CardsList>
       <Button
         className="more__button"
-        @click="addMoreCards(8)"
+        @click="addMoreCards(number)"
         >More games</Button
       >
     </Section>
@@ -30,7 +30,8 @@ export default {
       games: [],
       API_KEY: process.env.API_KEY,
       API_HOST: process.env.API_HOST,
-      page: 8,
+      cardsOnPage: 12,
+      number: 12,
     };
   },
   asyncData() {
@@ -50,12 +51,12 @@ export default {
   },
   methods: {
     addMoreCards(number) {
-      this.page += number;
+      this.cardsOnPage += number;
     },
   },
   computed: {
     listingCardsPerPage() {
-      return this.games.slice(0, `${this.page}`);
+      return this.games.slice(0, `${this.cardsOnPage}`);
     },
   },
 };
