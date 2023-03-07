@@ -1,5 +1,13 @@
 <template>
   <li class="card">
+    <Button
+      className="card__button-favorite"
+      buttonType="button"
+      buttonName="card-button-favorite">
+      <svg-icon
+        name="heart-icon"
+        class="card__icon-fav" />
+    </Button>
     <img
       class="card__image"
       :src="image"
@@ -12,14 +20,6 @@
         </li>
       </ul>
       <ul class="card__status">
-        <li class="card__status-name">
-          <Button
-            className="card__button-status"
-            buttonType="button"
-            buttonName="card-button-status">
-            Пройти
-          </Button>
-        </li>
         <li class="card__status-name">
           <Button
             className="card__button-status card__button-status_active"
@@ -66,6 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  position: relative;
   @include gridable(100%);
   grid-template-rows: max-content 1fr;
   gap: 15px;
@@ -96,6 +97,17 @@ export default {
 
     font-size: 12px;
     flex-flow: wrap;
+  }
+  &__icon-fav {
+    stroke: $color-bg-element;
+    stroke-width: 1px;
+    fill: $color-link-main;
+    width: 20px;
+    height: 20px;
+    &_active {
+      fill: red;
+      stroke: red;
+    }
   }
   &__status {
     @include flexible(100%);

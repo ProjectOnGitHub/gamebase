@@ -60,6 +60,14 @@ export default {
 }
 
 .card__button {
+  &-favorite {
+    @include flexible(30px);
+    height: 30px;
+    justify-items: center;
+    justify-self: right;
+    align-items: center;
+    position: absolute;
+  }
   &-status {
     background-color: $color-bg-element;
     color: $color-link-main;
