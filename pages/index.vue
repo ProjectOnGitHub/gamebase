@@ -3,6 +3,7 @@
     <Section
       className="game"
       title="Games">
+      <SearchForm />
       <CardsList>
         <Card
           v-for="game in listingCardsPerPage"
