@@ -8,14 +8,14 @@
         name="search"
         type="search"
         placeholder="Games..." />
-      <Button
+      <BaseButton
         className="search-form__button"
         buttonType="button"
         buttonName="search-button">
-        <svg-icon
+        <SvgIcon
           name="search-icon"
           class="search-form__icon" />
-      </Button>
+      </BaseButton>
     </label>
   </form>
 </template>

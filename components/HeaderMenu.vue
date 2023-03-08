@@ -5,12 +5,12 @@
       v-for="item of items"
       :key="item.text"
       @click="$emit('click')">
-      <nuxt-link
+      <NuxtLink
         class="header__menu-link"
         active-class="header__menu-link_active"
         :to="item.url">
         {{ item.text }}
-      </nuxt-link>
+      </NuxtLink>
     </li>
   </ul>
 </template>

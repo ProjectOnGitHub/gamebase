@@ -1,11 +1,11 @@
 <template>
-  <nuxt-link
+  <NuxtLink
     class="logo"
     to="/">
-    <svg-icon
+    <SvgIcon
       name="logo-icon"
       class="logo__icon" />
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script>

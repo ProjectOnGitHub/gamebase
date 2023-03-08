@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <Logo logo="logoText" />
-      <Navigation />
+      <BaseLogo logo="logoText" />
+      <HeaderNavigation />
     </div>
   </header>
 </template>

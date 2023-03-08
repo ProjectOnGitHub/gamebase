@@ -1,8 +1,8 @@
 <template>
   <App>
-    <Header />
+    <TheHeader />
     <Nuxt />
-    <Footer />
+    <TheFooter />
   </App>
 </template>
 

@@ -7,7 +7,7 @@
       :class="`${className}__title`">
       {{ title }}
     </h2>
-    <slot></slot>
+    <slot />
   </section>
 </template>
 

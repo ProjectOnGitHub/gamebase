@@ -1,13 +1,13 @@
 <template>
   <li class="card">
-    <Button
+    <BaseButton
       className="card__button-favorite"
       buttonType="button"
       buttonName="card-button-favorite">
-      <svg-icon
+      <SvgIcon
         name="heart-icon"
         class="card__icon-fav" />
-    </Button>
+    </BaseButton>
     <img
       class="card__image"
       :src="image"
@@ -21,20 +21,20 @@
       </ul>
       <ul class="card__status">
         <li class="card__status-name">
-          <Button
+          <BaseButton
             className="card__button-status card__button-status_active"
             buttonType="button"
             buttonName="card-button-status">
             Прохожу
-          </Button>
+          </BaseButton>
         </li>
         <li class="card__status-name">
-          <Button
+          <BaseButton
             className="card__button-status"
             buttonType="button"
             buttonName="card-button-status">
             Прошёл
-          </Button>
+          </BaseButton>
         </li>
       </ul>
     </div>
@@ -42,7 +42,9 @@
 </template>
 
 <script>
+import BaseButton from './BaseButton.vue';
 export default {
+  components: {BaseButton},
   props: {
     name: {
       type: String,

@@ -1,13 +1,13 @@
 <template>
   <nav class="header__navigation">
-    <Button
+    <BaseButton
       className="header__button"
       buttonName="header-button"
       buttonType="button"
       @click="handleToggleMenu">
-      <Cross :class="{cross_active: active}" />
-    </Button>
-    <Overlay
+      <BaseCross :class="{cross_active: active}" />
+    </BaseButton>
+    <TheOverlay
       :class="{overlay_opened: active}"
       @click="handleToggleMenu" />
     <HeaderMenu

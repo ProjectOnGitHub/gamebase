@@ -1,11 +1,11 @@
 <template>
-  <Main>
-    <Section
+  <TheMain>
+    <BaseSection
       className="game"
       title="Games">
-      <SearchForm />
+      <TheSearchForm />
       <CardsList>
-        <Card
+        <CardsListItem
           v-for="game in listingCardsPerPage"
           :key="game.id"
           :name="game.title"
@@ -13,13 +13,13 @@
           :genre="game.genre"
           :url="game.url" />
       </CardsList>
-      <Button
+      <BaseButton
         className="more__button"
-        @click="addMoreCards(number)"
-        >More games</Button
-      >
-    </Section>
-  </Main>
+        @click="addMoreCards(number)">
+        More games
+      </BaseButton>
+    </BaseSection>
+  </TheMain>
 </template>
 
 <script>
