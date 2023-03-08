@@ -26,15 +26,22 @@
 </template>
 
 <script>
-const { API_KEY } = process.env;
-const { API_HOST } = process.env;
+const apiKey = process.env.API_KEY;
+const apiHost = process.env.API_HOST;
 export default {
+  data() {
+    return {
+      games: [],
+      cardsOnPage: 12,
+      number: 12
+    };
+  },
   asyncData() {
-    return fetch(`https://${API_HOST}/api/games`, {
+    return fetch(`https://${apiHost}/api/games`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': `${API_KEY}`,
-        'X-RapidAPI-Host': `${API_HOST}`
+        'X-RapidAPI-Key': `${apiKey}`,
+        'X-RapidAPI-Host': `${apiHost}`
       }
     })
       .then(res => res.json())
@@ -44,15 +51,7 @@ export default {
       })
       .catch(err => console.error(err.message));
   },
-  data() {
-    return {
-      games: [],
-      API_KEY: process.env.API_KEY,
-      API_HOST: process.env.API_HOST,
-      cardsOnPage: 12,
-      number: 12
-    };
-  },
+
   computed: {
     listingCardsPerPage() {
       return this.games.slice(0, `${this.cardsOnPage}`);
