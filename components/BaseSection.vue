@@ -1,13 +1,15 @@
 <template>
   <section
     class="section"
-    :class="className">
+    :class="className"
+  >
     <h2
       class="section__title"
-      :class="`${className}__title`">
+      :class="`${className}__title`"
+    >
       {{ title }}
     </h2>
-    <slot />
+    <slot></slot>
   </section>
 </template>
 
@@ -16,13 +18,13 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
+      default: ''
     },
     className: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 };
 </script>
 

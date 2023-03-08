@@ -12,7 +12,7 @@
         className="search-form__button"
         buttonType="button"
         buttonName="search-button">
-        <SvgIcon
+        <svg-icon
           name="search-icon"
           class="search-form__icon" />
       </BaseButton>

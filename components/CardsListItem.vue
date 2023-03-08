@@ -1,19 +1,24 @@
 <template>
   <li class="card">
-    <BaseButton
-      className="card__button-favorite"
-      buttonType="button"
-      buttonName="card-button-favorite">
-      <SvgIcon
+    <base-button
+      class-name="card__button-favorite"
+      button-type="button"
+      button-name="card-button-favorite"
+    >
+      <svg-icon
         name="heart-icon"
-        class="card__icon-fav" />
-    </BaseButton>
+        class="card__icon-fav"
+      />
+    </base-button>
     <img
       class="card__image"
       :src="image"
-      :alt="name" />
+      :alt="name"
+    >
     <div class="card__info">
-      <h3 class="card__title">{{ name }}</h3>
+      <h3 class="card__title">
+        {{ name }}
+      </h3>
       <ul class="card__genre-list">
         <li class="card__genre-item">
           {{ genre }}
@@ -21,20 +26,22 @@
       </ul>
       <ul class="card__status">
         <li class="card__status-name">
-          <BaseButton
-            className="card__button-status card__button-status_active"
-            buttonType="button"
-            buttonName="card-button-status">
+          <base-button
+            class-name="card__button-status card__button-status_active"
+            button-type="button"
+            button-name="card-button-status"
+          >
             Прохожу
-          </BaseButton>
+          </base-button>
         </li>
         <li class="card__status-name">
-          <BaseButton
-            className="card__button-status"
-            buttonType="button"
-            buttonName="card-button-status">
+          <base-button
+            class-name="card__button-status"
+            button-type="button"
+            button-name="card-button-status"
+          >
             Прошёл
-          </BaseButton>
+          </base-button>
         </li>
       </ul>
     </div>
@@ -43,26 +50,27 @@
 
 <script>
 import BaseButton from './BaseButton.vue';
+
 export default {
-  components: {BaseButton},
+  components: { BaseButton },
   props: {
     name: {
       type: String,
-      default: '',
+      default: ''
     },
     url: {
       type: String,
-      default: '',
+      default: ''
     },
     genre: {
       type: String,
-      default: '',
+      default: ''
     },
     image: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 };
 </script>
 

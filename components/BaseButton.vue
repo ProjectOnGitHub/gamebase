@@ -4,8 +4,9 @@
     :class="className"
     :name="buttonName"
     :type="buttonType"
-    @click="$emit('click')">
-    <slot />
+    @click="$emit('click')"
+  >
+    <slot></slot>
   </button>
 </template>
 
@@ -14,21 +15,21 @@ export default {
   props: {
     className: {
       type: String,
-      default: '',
+      default: ''
     },
     buttonName: {
       type: String,
-      default: '',
+      default: ''
     },
     buttonType: {
       type: String,
-      default: '',
+      default: ''
     },
     buttonText: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 };
 </script>
 

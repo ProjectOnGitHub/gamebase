@@ -1,11 +1,13 @@
 <template>
-  <NuxtLink
+  <nuxt-link
     class="logo"
-    to="/">
-    <SvgIcon
+    to="/"
+  >
+    <svg-icon
       name="logo-icon"
-      class="logo__icon" />
-  </NuxtLink>
+      class="logo__icon"
+    />
+  </nuxt-link>
 </template>
 
 <script>
@@ -13,9 +15,9 @@ export default {
   props: {
     logo: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 };
 </script>
 

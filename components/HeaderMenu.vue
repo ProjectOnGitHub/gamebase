@@ -1,16 +1,18 @@
 <template>
   <ul class="header__menu">
     <li
-      class="header__menu-item"
       v-for="item of items"
       :key="item.text"
-      @click="$emit('click')">
-      <NuxtLink
+      class="header__menu-item"
+      @click="$emit('click')"
+    >
+      <nuxt-link
         class="header__menu-link"
         active-class="header__menu-link_active"
-        :to="item.url">
+        :to="item.url"
+      >
         {{ item.text }}
-      </NuxtLink>
+      </nuxt-link>
     </li>
   </ul>
 </template>
@@ -20,11 +22,11 @@ export default {
   data() {
     return {
       items: [
-        {text: 'Main', url: '/'},
-        {text: 'Backlog', url: '/backlog'},
-      ],
+        { text: 'Main', url: '/' },
+        { text: 'Backlog', url: '/backlog' }
+      ]
     };
-  },
+  }
 };
 </script>
 
