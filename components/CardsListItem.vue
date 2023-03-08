@@ -1,71 +1,69 @@
 <template>
-  <li class="card">
-    <base-button
-      class-name="card__button-favorite"
-      button-type="button"
-      button-name="card-button-favorite"
-    >
-      <svg-icon
-        name="heart-icon"
-        class="card__icon-fav"
+  <nuxt-link
+    class="card__link"
+    :to="`/${titleToUrl}/`"
+  >
+    <li class="card">
+      <base-button
+        class-name="card__button-favorite"
+        button-type="button"
+        button-name="card-button-favorite"
+      >
+        <svg-icon
+          name="heart-icon"
+          class="card__icon-fav"
+        />
+      </base-button>
+      <img
+        class="card__image"
+        :src="game.thumbnail"
+        :alt="game.title"
       />
-    </base-button>
-    <img
-      class="card__image"
-      :src="image"
-      :alt="name"
-    />
-    <div class="card__info">
-      <h3 class="card__title">
-        {{ name }}
-      </h3>
-      <ul class="card__genre-list">
-        <li class="card__genre-item">
-          {{ genre }}
-        </li>
-      </ul>
-      <ul class="card__status">
-        <li class="card__status-name">
-          <base-button
-            class-name="card__button-status card__button-status_active"
-            button-type="button"
-            button-name="card-button-status"
-          >
-            Прохожу
-          </base-button>
-        </li>
-        <li class="card__status-name">
-          <base-button
-            class-name="card__button-status"
-            button-type="button"
-            button-name="card-button-status"
-          >
-            Прошёл
-          </base-button>
-        </li>
-      </ul>
-    </div>
-  </li>
+      <div class="card__info">
+        <h3 class="card__title">
+          {{ game.title }}
+        </h3>
+        <ul class="card__genre-list">
+          <li class="card__genre-item">
+            {{ game.genre }}
+          </li>
+        </ul>
+        <ul class="card__status">
+          <li class="card__status-name">
+            <base-button
+              class-name="card__button-status card__button-status_active"
+              button-type="button"
+              button-name="card-button-status"
+            >
+              Прохожу
+            </base-button>
+          </li>
+          <li class="card__status-name">
+            <base-button
+              class-name="card__button-status"
+              button-type="button"
+              button-name="card-button-status"
+            >
+              Прошёл
+            </base-button>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   props: {
-    genre: {
-      type: String,
-      default: ''
-    },
-    image: {
-      type: String,
-      default: ''
-    },
-    name: {
-      type: String,
-      default: ''
-    },
-    url: {
-      type: String,
-      default: ''
+    game: {
+      type: Object,
+      default: () => ({})
+    }
+  },
+  computed: {
+    titleToUrl() {
+      return this.game.title.toLowerCase().replace(':', '').split(' ').join('-');
     }
   }
 };
@@ -79,6 +77,10 @@ export default {
   gap: 15px;
   border-radius: 5px;
   overflow: hidden;
+  &__link {
+    text-decoration: none;
+    color: $color-link-main;
+  }
   &__title {
     font-size: 24px;
     margin: 0;
@@ -96,6 +98,7 @@ export default {
   &__info {
     @include gridable(100%);
     gap: 10px;
+    overflow: hidden;
   }
   &__genre-list {
     @include gridable(100%);

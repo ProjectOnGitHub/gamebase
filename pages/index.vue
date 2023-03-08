@@ -1,18 +1,13 @@
 <template>
   <the-main>
-    <base-section
-      class-name="game"
-      title="Games"
-    >
+    <base-section class-name="games">
+      <h2 class="section__title games__title">Games</h2>
       <the-search-form />
       <cards-list>
         <cards-list-item
           v-for="game in listingCardsPerPage"
           :key="game.id"
-          :name="game.title"
-          :image="game.thumbnail"
-          :genre="game.genre"
-          :url="game.url"
+          :game="game"
         />
       </cards-list>
       <base-button
@@ -47,6 +42,7 @@ export default {
       .then(res => res.json())
       .then(res => {
         const games = res;
+        console.log(games);
         return { games };
       })
       .catch(err => console.error(err.message));

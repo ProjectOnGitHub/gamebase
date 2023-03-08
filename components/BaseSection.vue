@@ -3,12 +3,6 @@
     class="section"
     :class="className"
   >
-    <h2
-      class="section__title"
-      :class="`${className}__title`"
-    >
-      {{ title }}
-    </h2>
     <slot></slot>
   </section>
 </template>
