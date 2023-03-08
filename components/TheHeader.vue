@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <BaseLogo logo="logoText" />
-      <HeaderNavigation />
+      <base-logo logo="logoText" />
+      <header-navigation />
     </div>
   </header>
 </template>
@@ -11,9 +11,9 @@
 export default {
   data() {
     return {
-      logoText: 'Лого',
+      logoText: 'Лого'
     };
-  },
+  }
 };
 </script>
 

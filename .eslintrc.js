@@ -10,13 +10,13 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["vue"],
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.js","nuxt.config.js"],
   rules: {
     "vue/html-self-closing": [
       "error",
       {
         html: {
-          void: "never",
+          void: "any",
           normal: "never",
           component: "always",
         },
@@ -115,7 +115,7 @@ module.exports = {
       "error",
       "kebab-case",
       {
-        registeredComponentsOnly: true,
+        registeredComponentsOnly: false,
       },
     ],
     "comma-dangle": [
@@ -175,22 +175,8 @@ module.exports = {
       "always",
       { exceptAfterSingleLine: true },
     ],
-    "vue/sort-keys": [
-      "error",
-      "asc",
-      {
-        caseSensitive: true,
-        ignoreChildrenOf: ["model"],
-        ignoreGrandchildrenOf: [
-          "computed",
-          "directives",
-          "inject",
-          "props",
-          "watch",
-        ],
-        minKeys: 2,
-        natural: true,
-      },
-    ],
+    "vue/multi-word-component-names": ["error", {
+      "ignores": ['index']
+    }]
   },
 };

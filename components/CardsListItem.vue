@@ -14,7 +14,7 @@
       class="card__image"
       :src="image"
       :alt="name"
-    >
+    />
     <div class="card__info">
       <h3 class="card__title">
         {{ name }}
@@ -49,10 +49,7 @@
 </template>
 
 <script>
-import BaseButton from './BaseButton.vue';
-
 export default {
-  components: { BaseButton },
   props: {
     genre: {
       type: String,
@@ -70,7 +67,6 @@ export default {
       type: String,
       default: ''
     }
-
   }
 };
 </script>

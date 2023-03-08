@@ -7,15 +7,18 @@
         required
         name="search"
         type="search"
-        placeholder="Games..." />
-      <BaseButton
-        className="search-form__button"
-        buttonType="button"
-        buttonName="search-button">
+        placeholder="Games..."
+      />
+      <base-button
+        class-name="search-form__button"
+        button-type="button"
+        button-name="search-button"
+      >
         <svg-icon
           name="search-icon"
-          class="search-form__icon" />
-      </BaseButton>
+          class="search-form__icon"
+        />
+      </base-button>
     </label>
   </form>
 </template>
