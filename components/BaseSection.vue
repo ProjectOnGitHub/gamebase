@@ -16,11 +16,11 @@
 <script>
 export default {
   props: {
-    title: {
+    className: {
       type: String,
       default: ''
     },
-    className: {
+    title: {
       type: String,
       default: ''
     }

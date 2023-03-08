@@ -175,5 +175,22 @@ module.exports = {
       "always",
       { exceptAfterSingleLine: true },
     ],
+    "vue/sort-keys": [
+      "error",
+      "asc",
+      {
+        caseSensitive: true,
+        ignoreChildrenOf: ["model"],
+        ignoreGrandchildrenOf: [
+          "computed",
+          "directives",
+          "inject",
+          "props",
+          "watch",
+        ],
+        minKeys: 2,
+        natural: true,
+      },
+    ],
   },
 };

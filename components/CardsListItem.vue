@@ -54,14 +54,6 @@ import BaseButton from './BaseButton.vue';
 export default {
   components: { BaseButton },
   props: {
-    name: {
-      type: String,
-      default: ''
-    },
-    url: {
-      type: String,
-      default: ''
-    },
     genre: {
       type: String,
       default: ''
@@ -69,7 +61,16 @@ export default {
     image: {
       type: String,
       default: ''
+    },
+    name: {
+      type: String,
+      default: ''
+    },
+    url: {
+      type: String,
+      default: ''
     }
+
   }
 };
 </script>

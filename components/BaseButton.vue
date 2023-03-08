@@ -13,11 +13,11 @@
 <script>
 export default {
   props: {
-    className: {
+    buttonName: {
       type: String,
       default: ''
     },
-    buttonName: {
+    buttonText: {
       type: String,
       default: ''
     },
@@ -25,7 +25,7 @@ export default {
       type: String,
       default: ''
     },
-    buttonText: {
+    className: {
       type: String,
       default: ''
     }
