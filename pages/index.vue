@@ -21,8 +21,6 @@
 </template>
 
 <script>
-const apiKey = process.env.API_KEY;
-const apiHost = process.env.API_HOST;
 export default {
   data() {
     return {
@@ -34,19 +32,6 @@ export default {
     listingCardsPerPage() {
       return this.$store.state.games.slice(0, `${this.cardsOnPage}`);
     }
-  },
-  mounted() {
-    return fetch(`https://${apiHost}/api/games`, {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': `${apiKey}`,
-        'X-RapidAPI-Host': `${apiHost}`
-      }
-    })
-      .then(res => res.json())
-      .then(res => {
-        this.$store.commit('SET_GAMES', res);
-      });
   },
   methods: {
     addMoreCards(number) {
