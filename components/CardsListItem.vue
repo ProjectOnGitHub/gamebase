@@ -1,9 +1,9 @@
 <template>
-  <nuxt-link
-    class="card__link"
-    :to="`/${titleToUrl}/`"
-  >
-    <li class="card">
+  <li class="card">
+    <nuxt-link
+      class="card__link"
+      :to="`/${titleToUrl}/`"
+    >
       <base-button
         class-name="card__button-favorite"
         button-type="button"
@@ -49,8 +49,8 @@
           </li>
         </ul>
       </div>
-    </li>
-  </nuxt-link>
+    </nuxt-link>
+  </li>
 </template>
 
 <script>
@@ -71,13 +71,13 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  position: relative;
-  @include gridable(100%);
-  grid-template-rows: max-content 1fr;
-  gap: 15px;
-  border-radius: 5px;
-  overflow: hidden;
   &__link {
+    height: 100%;
+    position: relative;
+    @include gridable(100%);
+    grid-template-rows: max-content 1fr;
+    gap: 15px;
+    border-radius: 5px;
     text-decoration: none;
     color: $color-link-main;
   }

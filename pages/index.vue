@@ -26,12 +26,16 @@ const apiHost = process.env.API_HOST;
 export default {
   data() {
     return {
-      games: [],
       cardsOnPage: 12,
       number: 12
     };
   },
-  asyncData() {
+  computed: {
+    listingCardsPerPage() {
+      return this.$store.state.games.slice(0, `${this.cardsOnPage}`);
+    }
+  },
+  mounted() {
     return fetch(`https://${apiHost}/api/games`, {
       method: 'GET',
       headers: {
@@ -41,17 +45,8 @@ export default {
     })
       .then(res => res.json())
       .then(res => {
-        const games = res;
-        console.log(games);
-        return { games };
-      })
-      .catch(err => console.error(err.message));
-  },
-
-  computed: {
-    listingCardsPerPage() {
-      return this.games.slice(0, `${this.cardsOnPage}`);
-    }
+        this.$store.commit('SET_GAMES', res);
+      });
   },
   methods: {
     addMoreCards(number) {

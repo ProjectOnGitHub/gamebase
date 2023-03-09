@@ -1,3 +1,9 @@
 export const state = () => ({
-  searchWord: 'ntcn',
+  games: []
 });
+
+export const mutations = {
+  SET_GAMES(state, data) {
+    state.games = data;
+  }
+};
