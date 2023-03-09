@@ -6,6 +6,8 @@
   </the-main>
 </template>
 
-<script></script>
+<script>
+export default {};
+</script>
 
 <style lang="scss" scoped></style>
