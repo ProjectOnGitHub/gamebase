@@ -1,8 +1,13 @@
 const apiKey = process.env.API_KEY;
 const apiHost = process.env.API_HOST;
 export const state = () => ({
-  games: []
+  games: [],
+  gameById: []
 });
+
+export const getters = {
+  getCurrentGame: state => id => state.games.find(game => game.id === parseInt(id, 10))
+};
 
 export const mutations = {
   SET_GAMES(state, data) {

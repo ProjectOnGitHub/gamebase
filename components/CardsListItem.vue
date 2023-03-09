@@ -2,7 +2,7 @@
   <li class="card">
     <nuxt-link
       class="card__link"
-      :to="`/${titleToUrl}/`"
+      :to="`/${game.id}/`"
     >
       <base-button
         class-name="card__button-favorite"
@@ -61,11 +61,7 @@ export default {
       default: () => ({})
     }
   },
-  computed: {
-    titleToUrl() {
-      return this.game.title.toLowerCase().replace(':', '').split(' ').join('-');
-    }
-  }
+  computed: {}
 };
 </script>
 
