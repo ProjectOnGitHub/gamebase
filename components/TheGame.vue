@@ -4,12 +4,12 @@
       {{ game.title }}
     </h1>
     <p class="game__subtitle">
-      {{ game.short_description }}
+      {{ game.description }}
     </p>
     <img
       :src="game.thumbnail"
       :alt="game.title"
-      class="game_image"
+      class="game__image"
     />
     <ul class="game__info">
       <li class="game__info-item">Genre: {{ game.genre }}</li>
@@ -22,12 +22,27 @@
 </template>
 
 <script>
+const apiKey = process.env.API_KEY;
+const apiHost = process.env.API_HOST;
 export default {
-  computed: {
-    game() {
-      const { id } = this.$route.params;
-      return this.$store.getters.getCurrentGame(id);
-    }
+  data() {
+    return {
+      game: {}
+    };
+  },
+  mounted() {
+    const { id } = this.$route.params;
+    return fetch(`https://${apiHost}/api/game?id=${id}`, {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': `${apiKey}`,
+        'X-RapidAPI-Host': `${apiHost}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.game = res;
+      });
   }
 };
 </script>
