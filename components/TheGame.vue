@@ -51,16 +51,26 @@
           :src="screen.image"
           :alt="`${game.title} screenshot id ${screen.id}`"
           class="game__screenshot"
-          @click="showPopup"
+          @click="showPopup(screen)"
         />
       </li>
     </ul>
-    <the-popup ref="popup" />
+    <the-popup
+      ref="popup"
+      :screen-image="screen.image"
+      :screen-alt="game.title"
+      :screen-id="screen.id"
+    />
   </article>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      screen: {}
+    };
+  },
   computed: {
     game() {
       return this.$store.getters.getCurrentGame;
@@ -71,8 +81,9 @@ export default {
     this.$store.dispatch('getGameById', id);
   },
   methods: {
-    showPopup() {
+    showPopup(screen) {
       this.$refs.popup.show = true;
+      this.screen = screen;
     }
   }
 };
@@ -156,9 +167,10 @@ export default {
     grid-area: screens;
   }
   &__screenshot {
+    cursor: pointer;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>

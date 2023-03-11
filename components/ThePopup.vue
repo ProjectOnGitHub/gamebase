@@ -7,11 +7,10 @@
     >
       <figure class="popup__figure">
         <img
-          src="https://www.freetogame.com/g/521/diablo-immortal-1.jpg"
-          alt=""
+          :src="screenImage"
+          :alt="`${screenAlt}: screenshot ID ${screenId}`"
           class="popup__image"
         />
-        <figcaption class="popup__text">Text</figcaption>
       </figure>
     </div>
   </transition>
@@ -19,6 +18,20 @@
 
 <script>
 export default {
+  props: {
+    screenAlt: {
+      type: String,
+      default: ''
+    },
+    screenImage: {
+      type: String,
+      default: ''
+    },
+    screenId: {
+      type: Number,
+      default: 0
+    }
+  },
   data() {
     return {
       show: false
