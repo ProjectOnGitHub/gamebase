@@ -51,9 +51,11 @@
           :src="screen.image"
           :alt="`${game.title} screenshot id ${screen.id}`"
           class="game__screenshot"
+          @click="showPopup"
         />
       </li>
     </ul>
+    <the-popup ref="popup" />
   </article>
 </template>
 
@@ -67,6 +69,11 @@ export default {
   mounted() {
     const { id } = this.$route.params;
     this.$store.dispatch('getGameById', id);
+  },
+  methods: {
+    showPopup() {
+      this.$refs.popup.show = true;
+    }
   }
 };
 </script>
