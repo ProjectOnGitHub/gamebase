@@ -2,7 +2,8 @@ const apiKey = process.env.API_KEY;
 const apiHost = process.env.API_HOST;
 export const state = () => ({
   games: [],
-  gameById: {}
+  gameById: {},
+  searchWord: ''
 });
 
 export const mutations = {
@@ -11,12 +12,18 @@ export const mutations = {
   },
   SET_GAME_BY_ID(state, data) {
     state.gameById = data;
+  },
+  SET_SEARCH_WORD(state, data) {
+    state.searchWord = data;
   }
 };
 
 export const actions = {
   async nuxtServerInit({ dispatch }) {
     await dispatch('getGames');
+  },
+  setSearchWord({ commit }, word) {
+    commit('SET_SEARCH_WORD', word);
   },
   getGames({ commit }) {
     return fetch(`https://${apiHost}/api/games`, {

@@ -5,6 +5,7 @@
         class="search-form__input"
         min-ength="1"
         required
+        v-model="searchWord"
         name="search"
         type="search"
         placeholder="Games..."
@@ -23,7 +24,18 @@
   </form>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      searchWord: ''
+    };
+  },
+  updated() {
+    this.$store.dispatch('setSearchWord', this.searchWord);
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .search-form {
