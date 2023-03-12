@@ -5,12 +5,6 @@ export const state = () => ({
   gameById: {}
 });
 
-export const getters = {
-  getCurrentGame(state) {
-    return state.gameById;
-  }
-};
-
 export const mutations = {
   SET_GAMES(state, data) {
     state.games = data;

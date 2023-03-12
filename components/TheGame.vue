@@ -73,7 +73,7 @@ export default {
   },
   computed: {
     game() {
-      return this.$store.getters.getCurrentGame;
+      return this.$store.state.gameById;
     }
   },
   mounted() {
