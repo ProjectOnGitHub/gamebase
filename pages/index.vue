@@ -11,6 +11,7 @@
         />
       </cards-list>
       <base-button
+        v-if="showMoreButton"
         class-name="more__button"
         @click="addMoreCards(number)"
       >
@@ -34,6 +35,9 @@ export default {
     },
     gamesPerPage() {
       return this.games.slice(0, `${this.cardsOnPage}`);
+    },
+    showMoreButton() {
+      return this.games.length >= 12;
     }
   },
   methods: {
