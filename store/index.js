@@ -2,6 +2,7 @@ const apiKey = process.env.API_KEY;
 const apiHost = process.env.API_HOST;
 export const state = () => ({
   games: [],
+  filteredGames: [],
   gameById: {},
   searchWord: ''
 });
@@ -9,6 +10,9 @@ export const state = () => ({
 export const mutations = {
   SET_GAMES(state, data) {
     state.games = data;
+  },
+  SET_FILTERED_GAMES(state, data) {
+    state.filteredGames = data;
   },
   SET_GAME_BY_ID(state, data) {
     state.gameById = data;
@@ -25,6 +29,10 @@ export const actions = {
   setSearchWord({ commit }, word) {
     commit('SET_SEARCH_WORD', word);
   },
+  searchGameByWord({ commit, state }, searchWord) {
+    this.filteredGames = state.games.filter(game => game.title.toLowerCase().includes(searchWord.toLowerCase()));
+    commit('SET_FILTERED_GAMES', this.filteredGames);
+  },
   getGames({ commit }) {
     return fetch(`https://${apiHost}/api/games`, {
       method: 'GET',
@@ -36,6 +44,7 @@ export const actions = {
       .then(res => res.json())
       .then(res => {
         commit('SET_GAMES', res);
+        commit('SET_FILTERED_GAMES', res);
       });
   },
   getGameById({ commit }, id) {

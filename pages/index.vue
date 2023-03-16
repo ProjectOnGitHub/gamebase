@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     listingCardsPerPage() {
-      return this.$store.state.games.slice(0, `${this.cardsOnPage}`);
+      return this.$store.state.filteredGames.slice(0, `${this.cardsOnPage}`);
     }
   },
   methods: {

@@ -33,6 +33,7 @@ export default {
   },
   updated() {
     this.$store.dispatch('setSearchWord', this.searchWord);
+    this.$store.dispatch('searchGameByWord', this.searchWord);
   }
 };
 </script>
