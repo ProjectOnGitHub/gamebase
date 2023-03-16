@@ -5,7 +5,7 @@
       <the-search-form />
       <cards-list>
         <cards-list-item
-          v-for="game in listingCardsPerPage"
+          v-for="game in gamesPerPage"
           :key="game.id"
           :game="game"
         />
@@ -29,8 +29,11 @@ export default {
     };
   },
   computed: {
-    listingCardsPerPage() {
-      return this.$store.state.filteredGames.slice(0, `${this.cardsOnPage}`);
+    games() {
+      return this.$store.state.filteredGames;
+    },
+    gamesPerPage() {
+      return this.games.slice(0, `${this.cardsOnPage}`);
     }
   },
   methods: {
