@@ -14,6 +14,7 @@
         class-name="search-form__button"
         button-type="button"
         button-name="search-button"
+        @click="handleClickSearchButton()"
       >
         <svg-icon
           name="search-icon"
@@ -33,7 +34,11 @@ export default {
   },
   updated() {
     this.$store.dispatch('setSearchWord', this.searchWord);
-    this.$store.dispatch('searchGameByWord', this.searchWord);
+  },
+  methods: {
+    handleClickSearchButton() {
+      this.$store.dispatch('searchGameByWord', this.searchWord);
+    }
   }
 };
 </script>
