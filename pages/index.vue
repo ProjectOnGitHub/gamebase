@@ -40,6 +40,11 @@ export default {
       return this.games.length >= this.cardsOnPage;
     }
   },
+  watch: {
+    games() {
+      this.cardsOnPage = 12;
+    }
+  },
   methods: {
     addMoreCards(number) {
       this.cardsOnPage += number;
