@@ -28,26 +28,6 @@
             {{ game.genre }}
           </li>
         </ul>
-        <ul class="card__status">
-          <li class="card__status-name">
-            <base-button
-              class-name="card__button-status card__button-status_active"
-              button-type="button"
-              button-name="card-button-status"
-            >
-              Прохожу
-            </base-button>
-          </li>
-          <li class="card__status-name">
-            <base-button
-              class-name="card__button-status"
-              button-type="button"
-              button-name="card-button-status"
-            >
-              Прошёл
-            </base-button>
-          </li>
-        </ul>
       </div>
     </nuxt-link>
   </li>
@@ -95,12 +75,12 @@ export default {
     @include gridable(100%);
     gap: 10px;
     overflow: hidden;
+    align-content: space-between;
   }
   &__genre-list {
     @include gridable(100%);
     @include unmarkedList;
     align-items: center;
-
     font-size: 12px;
     flex-flow: wrap;
   }
@@ -114,15 +94,6 @@ export default {
       fill: red;
       stroke: red;
     }
-  }
-  &__status {
-    @include flexible(100%);
-    @include unmarkedList;
-    align-self: flex-end;
-    font-size: 10px;
-    flex-flow: nowrap;
-    gap: 10px;
-    box-sizing: border-box;
   }
 }
 </style>
