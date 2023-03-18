@@ -26,6 +26,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.3",
+    "postcss-sorting": "^8.0.2",
     "sass": "^1.58.3",
     "sass-loader": "^10.4.1"
   },

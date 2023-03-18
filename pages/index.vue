@@ -3,6 +3,7 @@
     <base-section class-name="games">
       <h2 class="section__title games__title">Games</h2>
       <the-search-form />
+      <p class="games__text">{{ numberOfGames }} game(s) found</p>
       <cards-list>
         <cards-list-item
           v-for="game in gamesPerPage"
@@ -37,7 +38,10 @@ export default {
       return this.games.slice(0, `${this.cardsOnPage}`);
     },
     displayedMoreButton() {
-      return this.games.length >= this.cardsOnPage;
+      return this.numberOfGames >= this.cardsOnPage;
+    },
+    numberOfGames() {
+      return this.games.length;
     }
   },
   watch: {
@@ -53,4 +57,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.games {
+  &__text {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: $color-text-main;
+  }
+}
+</style>

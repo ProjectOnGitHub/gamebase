@@ -77,12 +77,10 @@ export default {
       preset: {
         autoprefixer: {
           grid: true
-        },
-        'postcss-sorting': {
-          order: ['custom-properties', 'dollar-variables', 'declarations', 'at-rules', 'rules'],
-          'properties-order': 'alphabetical',
-          'unspecified-properties-position': 'bottom'
         }
+      },
+      plugins: {
+        'postcss-sorting': {}
       }
     },
     extend(config, { isClient }) {

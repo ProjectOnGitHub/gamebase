@@ -16,6 +16,7 @@ export default {};
   justify-items: center;
   align-content: space-between;
   box-sizing: border-box;
+  min-height: 100vh;
   height: 100%;
   background-color: $color-bg-main;
   font-weight: 400;
