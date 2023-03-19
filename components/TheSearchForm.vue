@@ -9,12 +9,13 @@
         name="search"
         type="search"
         placeholder="Games..."
+        @keydown.enter.prevent="handleClickSearchButton()"
       />
       <base-button
         class-name="search-form__button"
         button-type="button"
         button-name="search-button"
-        @click="handleClickSearchButton()"
+        @click="handleClickSearchButton"
       >
         <svg-icon
           name="search-icon"
