@@ -30,7 +30,7 @@
 export default {
   data() {
     return {
-      searchWord: ''
+      searchWord: this.$store.state.searchWord
     };
   },
   updated() {
