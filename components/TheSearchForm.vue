@@ -9,7 +9,7 @@
         name="search"
         type="search"
         placeholder="Games..."
-        @keydown.enter.prevent="handleClickSearchButton()"
+        @keydown.enter.prevent="handleClickSearchButton"
       />
       <base-button
         class-name="search-form__button"
