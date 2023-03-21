@@ -13,5 +13,6 @@ export default {};
   @include gridable(100%);
   justify-items: center;
   box-sizing: border-box;
+  align-self: start;
 }
 </style>

@@ -13,6 +13,7 @@ export default {};
   @include gridable(100%);
   font-family: 'Inter', Arial, sans-serif;
   grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr min-content;
   justify-items: center;
   align-content: space-between;
   box-sizing: border-box;
