@@ -3,8 +3,14 @@
     <base-section class-name="games">
       <h2 class="section__title games__title">Games</h2>
       <the-search-form />
-      <p class="games__text">{{ numberOfGames }} game(s) found</p>
-      <cards-list>
+      <the-loader v-if="isShowLoader" />
+      <p
+        class="games__text"
+        v-if="!isShowLoader"
+      >
+        {{ numberOfGames }} game(s) found
+      </p>
+      <cards-list v-if="!isShowLoader">
         <cards-list-item
           v-for="game in gamesPerPage"
           :key="game.id"
@@ -12,7 +18,7 @@
         />
       </cards-list>
       <base-button
-        v-if="displayedMoreButton"
+        v-if="displayedMoreButton && !isShowLoader"
         class-name="more__button"
         @click="addMoreCards(number)"
       >
@@ -27,7 +33,8 @@ export default {
   data() {
     return {
       cardsOnPage: 12,
-      number: 12
+      number: 12,
+      isShowLoader: false
     };
   },
   computed: {
@@ -47,11 +54,18 @@ export default {
   watch: {
     games() {
       this.cardsOnPage = 12;
+      this.toggleLoader();
     }
   },
   methods: {
     addMoreCards(number) {
       this.cardsOnPage += number;
+    },
+    toggleLoader() {
+      this.isShowLoader = true;
+      setTimeout(() => {
+        this.isShowLoader = false;
+      }, 1000);
     }
   }
 };
