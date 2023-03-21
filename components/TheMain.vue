@@ -14,5 +14,6 @@ export default {};
   justify-items: center;
   box-sizing: border-box;
   align-self: start;
+  height: 100%;
 }
 </style>

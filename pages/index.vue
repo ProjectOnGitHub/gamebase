@@ -73,6 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 .games {
+  height: 100%;
   &__text {
     margin: 0;
     font-weight: 500;

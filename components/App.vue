@@ -15,7 +15,6 @@ export default {};
   grid-template-columns: 1fr;
   grid-template-rows: min-content 1fr min-content;
   justify-items: center;
-  align-content: space-between;
   box-sizing: border-box;
   min-height: 100vh;
   height: 100%;

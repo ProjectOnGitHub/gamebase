@@ -30,6 +30,7 @@ export default {
   max-width: $max-width;
   padding: 35px 20px;
   justify-items: center;
+  align-content: start;
   &__title {
     margin: 0;
     font-weight: 500;
