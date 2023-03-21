@@ -4,26 +4,23 @@
       <h2 class="section__title games__title">Games</h2>
       <the-search-form />
       <the-loader v-if="isShowLoader" />
-      <p
-        class="games__text"
-        v-if="!isShowLoader"
-      >
-        {{ numberOfGames }} game(s) found
-      </p>
-      <cards-list v-if="!isShowLoader">
-        <cards-list-item
-          v-for="game in gamesPerPage"
-          :key="game.id"
-          :game="game"
-        />
-      </cards-list>
-      <base-button
-        v-if="displayedMoreButton && !isShowLoader"
-        class-name="more__button"
-        @click="addMoreCards(number)"
-      >
-        More games
-      </base-button>
+      <template v-if="!isShowLoader">
+        <p class="games__text">{{ numberOfGames }} game(s) found</p>
+        <cards-list>
+          <cards-list-item
+            v-for="game in gamesPerPage"
+            :key="game.id"
+            :game="game"
+          />
+        </cards-list>
+        <base-button
+          v-if="displayedMoreButton"
+          class-name="more__button"
+          @click="addMoreCards(number)"
+        >
+          More games
+        </base-button>
+      </template>
     </base-section>
   </the-main>
 </template>
