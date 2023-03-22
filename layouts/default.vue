@@ -18,4 +18,8 @@
 .page-leave-to {
   opacity: 0;
 }
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
 </style>
