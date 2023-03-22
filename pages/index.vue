@@ -5,7 +5,9 @@
       <the-search-form />
       <the-loader v-if="isShowLoader" />
       <template v-if="!isShowLoader">
-        <p class="games__text">{{ numberOfGames }} game(s) found</p>
+        <p class="games__text">
+          {{ textForFoundedGames }}
+        </p>
         <cards-list>
           <cards-list-item
             v-for="game in gamesPerPage"
@@ -46,6 +48,15 @@ export default {
     },
     numberOfGames() {
       return this.games.length;
+    },
+    textForFoundedGames() {
+      if (this.numberOfGames === 0) {
+        return 'Games not found';
+      }
+      if (this.numberOfGames === 1) {
+        return `${this.numberOfGames} game found`;
+      }
+      return `${this.numberOfGames} games found`;
     }
   },
   watch: {

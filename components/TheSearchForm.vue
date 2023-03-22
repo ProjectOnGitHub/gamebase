@@ -23,6 +23,12 @@
         />
       </base-button>
     </label>
+    <span
+      v-if="isErrorText"
+      class="search-form__error-text"
+    >
+      {{ errorText }}</span
+    >
   </form>
 </template>
 
@@ -30,7 +36,9 @@
 export default {
   data() {
     return {
-      searchWord: this.$store.state.searchWord
+      searchWord: this.$store.state.searchWord,
+      errorText: 'Enter word you want to search',
+      isErrorText: false
     };
   },
   updated() {
@@ -38,7 +46,10 @@ export default {
   },
   methods: {
     handleClickSearchButton() {
-      this.$store.dispatch('searchGameByWord', this.searchWord);
+      if (this.searchWord.length > 0) {
+        this.$store.dispatch('searchGameByWord', this.searchWord);
+        this.isErrorText = false;
+      } else this.isErrorText = true;
     }
   }
 };
@@ -50,6 +61,8 @@ export default {
   max-width: 500px;
   border-radius: 50%;
   height: 40px;
+  flex-direction: column;
+  gap: 5px;
   &__label {
     @include flexible(100%);
     align-items: center;
@@ -76,6 +89,11 @@ export default {
     fill: transparent;
     width: 18px;
     height: 18px;
+  }
+  &__error-text {
+    margin-left: 20px;
+    font-size: 12px;
+    color: $color-text-error;
   }
 }
 </style>
