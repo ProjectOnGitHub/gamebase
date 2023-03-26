@@ -22,7 +22,21 @@
           class="search-form__icon"
         />
       </base-button>
+      {{ optionValue }}
     </label>
+    <select
+      name=""
+      id=""
+      :v-model="optionValue"
+    >
+      <option>all</option>
+      <option
+        v-for="(genre, idx) in genres"
+        :key="idx"
+      >
+        {{ genre }}
+      </option>
+    </select>
     <span
       v-if="isErrorText"
       class="search-form__error-text"
@@ -38,8 +52,17 @@ export default {
     return {
       searchWord: this.$store.state.searchWord,
       errorText: 'Enter word you want to search',
-      isErrorText: false
+      isErrorText: false.value,
+      optionValue: ''
     };
+  },
+  computed: {
+    genres() {
+      return this.$store.state.genres;
+    }
+  },
+  mounted() {
+    this.$store.dispatch('setGenres');
   },
   updated() {
     this.$store.dispatch('setSearchWord', this.searchWord);

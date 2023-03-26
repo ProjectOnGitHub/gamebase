@@ -4,7 +4,8 @@ export const state = () => ({
   games: [],
   filteredGames: [],
   gameById: {},
-  searchWord: ''
+  searchWord: '',
+  genres: []
 });
 
 export const mutations = {
@@ -19,6 +20,9 @@ export const mutations = {
   },
   SET_SEARCH_WORD(state, data) {
     state.searchWord = data;
+  },
+  SET_GENRES(state, data) {
+    state.genres = data;
   }
 };
 
@@ -28,6 +32,10 @@ export const actions = {
   },
   setSearchWord({ commit }, word) {
     commit('SET_SEARCH_WORD', word);
+  },
+  setGenres({ commit, state }) {
+    this.genres = Array.from(new Set(state.games.map(game => game.genre.toLowerCase().trim())));
+    commit('SET_GENRES', this.genres);
   },
   searchGameByWord({ commit, state }, searchWord) {
     this.filteredGames = state.games.filter(game => game.title.toLowerCase().includes(searchWord.toLowerCase()));
