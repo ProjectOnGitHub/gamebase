@@ -51,7 +51,7 @@ export default {
       return this.games.slice(0, `${this.cardsOnPage}`);
     },
     displayedMoreButton() {
-      return this.numberOfGames >= this.cardsOnPage;
+      return this.numberOfGames > this.cardsOnPage;
     },
     numberOfGames() {
       return this.games.length;
