@@ -2,13 +2,15 @@
   <header class="header">
     <div class="header__container">
       <base-logo logo="logoText" />
-      <header-navigation />
     </div>
   </header>
 </template>
 
 <script>
+import BaseLogo from './BaseLogo.vue';
+
 export default {
+  components: { BaseLogo },
   data() {
     return {
       logoText: 'Лого'

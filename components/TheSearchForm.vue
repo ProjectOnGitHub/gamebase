@@ -24,30 +24,20 @@
       </base-button>
       {{ optionValue }}
     </label>
-    <select
-      name=""
-      id=""
-      :v-model="optionValue"
-    >
-      <option>all</option>
-      <option
-        v-for="(genre, idx) in genres"
-        :key="idx"
-      >
-        {{ genre }}
-      </option>
-    </select>
     <span
       v-if="isErrorText"
       class="search-form__error-text"
     >
-      {{ errorText }}</span
-    >
+      {{ errorText }}
+    </span>
   </form>
 </template>
 
 <script>
+import BaseButton from './BaseButton.vue';
+
 export default {
+  components: { BaseButton },
   data() {
     return {
       searchWord: this.$store.state.searchWord,
@@ -55,14 +45,6 @@ export default {
       isErrorText: false.value,
       optionValue: ''
     };
-  },
-  computed: {
-    genres() {
-      return this.$store.state.genres;
-    }
-  },
-  mounted() {
-    this.$store.dispatch('setGenres');
   },
   updated() {
     this.$store.dispatch('setSearchWord', this.searchWord);

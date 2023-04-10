@@ -4,8 +4,6 @@
   </ul>
 </template>
 
-<script></script>
-
 <style lang="scss" scoped>
 .cards {
   @include gridable(100%);

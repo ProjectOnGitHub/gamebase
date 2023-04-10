@@ -7,25 +7,22 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      error: {
-        type: Object,
-        default: () => ({}),
-      }
-    },
-    mounted() {
-      console.log(this.error, 'ERROR OBJECT');
+export default {
+  props: {
+    error: {
+      type: Object,
+      default: () => ({})
     }
   }
+};
 </script>
 
 <style scoped>
-  .error-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-  }
+.error-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
 </style>

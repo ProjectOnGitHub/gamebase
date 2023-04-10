@@ -12,11 +12,26 @@
       class="game__thumbnail"
     />
     <ul class="game__info game__info_additional">
-      <li class="game__info-item"><span class="game__info-name">Genre:</span> {{ game.genre }}</li>
-      <li class="game__info-item"><span class="game__info-name">Developer:</span> {{ game.developer }}</li>
-      <li class="game__info-item"><span class="game__info-name">Publiser:</span> {{ game.publisher }}</li>
-      <li class="game__info-item"><span class="game__info-name">Release:</span> {{ game.release_date }}</li>
-      <li class="game__info-item"><span class="game__info-name">Platform:</span> {{ game.platform }}</li>
+      <li class="game__info-item">
+        <span class="game__info-name"> Genre: </span>
+        {{ game.genre }}
+      </li>
+      <li class="game__info-item">
+        <span class="game__info-name">Developer:</span>
+        {{ game.developer }}
+      </li>
+      <li class="game__info-item">
+        <span class="game__info-name">Publiser:</span>
+        {{ game.publisher }}
+      </li>
+      <li class="game__info-item">
+        <span class="game__info-name">Release:</span>
+        {{ game.release_date }}
+      </li>
+      <li class="game__info-item">
+        <span class="game__info-name">Platform:</span>
+        {{ game.platform }}
+      </li>
     </ul>
     <ul class="game__info game__info_requirements">
       <li
@@ -55,7 +70,10 @@
 </template>
 
 <script>
+import ThePopup from './ThePopup.vue';
+
 export default {
+  components: { ThePopup },
   data() {
     return {
       screen: {}

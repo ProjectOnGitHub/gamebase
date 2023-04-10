@@ -2,10 +2,6 @@
   <div class="loader"></div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .loader {
   border: 5px solid $color-bg-element;

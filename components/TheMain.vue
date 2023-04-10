@@ -4,10 +4,6 @@
   </main>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .main {
   @include gridable(100%);

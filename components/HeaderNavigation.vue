@@ -12,18 +12,15 @@
       :class="{ overlay_opened: active }"
       @click="handleToggleMenu"
     />
-    <header-menu
-      :class="{ header__menu_opened: active }"
-      @click="handleToggleMenu"
-    />
   </nav>
 </template>
 
 <script>
 import BaseCross from './BaseCross.vue';
+import TheOverlay from './TheOverlay.vue';
 
 export default {
-  components: { BaseCross },
+  components: { BaseCross, TheOverlay },
   data() {
     return {
       active: false

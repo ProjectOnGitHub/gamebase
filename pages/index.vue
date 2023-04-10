@@ -28,7 +28,14 @@
 </template>
 
 <script>
+import BaseButton from '../components/BaseButton.vue';
+import CardsListItem from '../components/CardsListItem.vue';
+import TheLoader from '../components/TheLoader.vue';
+import TheSearchForm from '../components/TheSearchForm.vue';
+import TheMain from '../components/TheMain.vue';
+
 export default {
+  components: { TheMain, TheSearchForm, TheLoader, CardsListItem, BaseButton },
   data() {
     return {
       cardsOnPage: 12,
