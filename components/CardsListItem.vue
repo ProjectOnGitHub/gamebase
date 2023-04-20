@@ -8,12 +8,7 @@
         class-name="card__button-favorite"
         button-type="button"
         button-name="card-button-favorite"
-      >
-        <svg-icon
-          name="heart-icon"
-          class="card__icon-fav"
-        />
-      </base-button>
+      />
       <img
         class="card__image"
         :src="game.thumbnail"
